@@ -27,7 +27,7 @@ void rewrite_time_in_file(struct tm *time_info);
 void print_if_times_passed(struct tm *time_info, struct tm *time_info_old);
 
 //ASK FOR INFO FUNCTIONS//
-int ask_task_info_all(FILE *task_string_buffer_file);
+int ask_task_info_all(FILE *saved_task_data);
 
 bool is_name_valid(char *name);
 

@@ -28,22 +28,22 @@ int main(void) {
     int Monthly_quant = 0;
     int Yearly_quant = 0; 
 
-    FILE *task_string_buffer_file = fopen(
-        "C:/Users/mojmi/CLionProjects/Mojmir/Learning/Terminal_To_Do_Manager/TaskStringBufferFile", "r+");
+    FILE *saved_task_data = fopen(
+        "C:/Users/mojmi/CLionProjects/Mojmir/Learning/Terminal_To_Do_Manager/saved_task_data", "r+");
 
-    int task_order = ask_task_info_all(task_string_buffer_file);
+    int task_order = ask_task_info_all(saved_task_data);
 
     //--WRITING THE TO DO LIST--//
     FILE *To_Do_List = fopen("C:/Users/mojmi/CLionProjects/Mojmir/Learning/Terminal_To_Do_Manager/ToDoList", "w+");
     int To_Do_List_file_size = get_file_size(To_Do_List);
-    int task_string_buffer_file_size = get_file_size(task_string_buffer_file);
-    char *To_Do_List_String = malloc(To_Do_List_file_size + task_string_buffer_file_size);
+    int saved_task_data_size = get_file_size(saved_task_data);
+    char *To_Do_List_String = malloc(To_Do_List_file_size + saved_task_data_size);
 
-    if (task_string_buffer_file) {
-        fread(To_Do_List_String, 1, task_string_buffer_file_size, task_string_buffer_file);
+    if (saved_task_data) {
+        fread(To_Do_List_String, 1, saved_task_data_size, saved_task_data);
     }
     
-    fclose(task_string_buffer_file);
+    fclose(saved_task_data);
     for (int current_frequency_order = 0; current_frequency_order <= 4; current_frequency_order++) {
         if (check_frequency(To_Do_List_String, current_frequency_order)) {
             fprint_frequency(To_Do_List, current_frequency_order);

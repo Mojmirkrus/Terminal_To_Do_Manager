@@ -60,7 +60,7 @@ void print_if_times_passed(struct tm *time_info, struct tm *time_info_old) {
 }
 
 //ASK FOR INFO FUNTIONS//
-int ask_task_info_all(FILE *task_string_buffer_file) {
+int ask_task_info_all(FILE *saved_task_data) {
     int task_order = 0;
     task current_task;
     //Entering tasks to buffer file//
@@ -127,7 +127,7 @@ int ask_task_info_all(FILE *task_string_buffer_file) {
             , current_task.task_frequency, current_task.task_importance,
             current_task.task_count_till_completion, current_task.task_is_completed);
 
-        fprintf(task_string_buffer_file, "task_%d\nname:%s\nfrequency:%d\nimportance:%d\ncount:%d\ncompletion:%i\n\n",
+        fprintf(saved_task_data, "task_%d\nname:%s\nfrequency:%d\nimportance:%d\ncount:%d\ncompletion:%i\n\n",
                 task_order, current_task.task_create_name, current_task.task_frequency, current_task.task_importance,
                 current_task.task_count_till_completion, current_task.task_is_completed);
 
@@ -139,7 +139,11 @@ int ask_task_info_all(FILE *task_string_buffer_file) {
     if (task_order >= 0) {
         return task_order;
     }
-    printf("Error in 'ask_task_info_all' - function: task_order below 0");
+    if (task_order == -1) {
+    printf("Warning: No tasks added\n");
+        return task_order;
+    }
+    printf("Error in 'ask_task_info_all' - function: task_order below -1\n");
     return -1;
 }
 
