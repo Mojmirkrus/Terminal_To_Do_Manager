@@ -1,0 +1,25 @@
+-zlepsit nazvy premien/funkcii
+
+-pridat moznost pridavania a odstranovania uloh z/do suboru ktory uz je pouzity
+
+-pridat count do todolistu, napr [] Varenie (0/3)
+
+-odstranovanie hotovych uloh/automaticke odstranovanie jednorazovych uloh po ich dokonceni(s tym ze pouzivatel to musi potvrdit)
+
+-zmenit alebo odovodnit preco som pouzil malloc na structy
+
+-zlepsit/rozdelit funkciu ask_task_info_all na casti
+
+-make new .c and .h files for each group
+
+
+
+
+
+
+
+-LEARN GIT
+
+-LEARN COMPILER/COMPILING
+
+

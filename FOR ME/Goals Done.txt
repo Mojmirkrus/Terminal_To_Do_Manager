@@ -1,0 +1,3 @@
+-[Done]dat do funkcii/lepsie zorganizovat prvu cast kodu
+
+-[Done]pridat kontrolu, ak si pytam cislo od 0 do 4 a pouzivatel da nieco ine tak mu to da upozornenie a nech napise znovu
